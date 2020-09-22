@@ -43,9 +43,16 @@
     </div>
 
     <hr	class="mb-5">
-    <div class="row">
+    <!--Este row-flex lo que hace es poner los divs uno al lado del otro en columnas-->
+    <div class="row row-flex">
         <!--lugar es una variable declarada en el ts de este componente-->
-        <app-destino-viaje *ngFor = "let x of destinos" [lugar]="x"></app-destino-viaje>
+        <!-- ese $event es lo mismo que el lugar x-->
+        <app-destino-viaje 
+        *ngFor = "let x of destinos; let i=index" 
+        [lugar]="x"
+        [posicion]="i+1"
+        (clicked)="elegido($event)" 
+        ></app-destino-viaje>
     </div>
 
 </div>

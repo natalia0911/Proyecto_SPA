@@ -1,22 +1,41 @@
-<!---
-<h1>
-    {{lugar}}
-</h1>
--->
-
 
 <div class="card-content">
     <div class="card-img">
         <!--width="100" height="100" ---*No ncesito poner esto porque desde estilos      {{lugar.imagenURL}}   "https://i.ytimg.com/vi/N7jzIZ1WUww/sddefault.jpg"-->
         <img src=  {{lugar.imagenURL}}  alt= "Imagen del lugar">  
         <span>
-            <h4>{{lugar.nombre}}</h4>
+            <h4>{{posicion}}</h4> <!--nombre de posicion -->
         </span>
     </div>
     <div class="card-desc">
-        <h3>{{lugar.nombre}}</h3>
-        <p>hola.</p>
-        <a href="#" class="btn-card">Read</a>
+        <h3>{{lugar.nombre}}</h3> <!-- es el nombre que ingresé-->
+        <p>Servicios</p>
+        <ul>
+            <li *ngFor="let s of lugar.servicios">
+                <!-- Va iterando en los servicios del lugar(lista de lugares que son tipo clase destino-viaje )
+                y s es el servicio, si s es desayuno se pone en italic sino en la letra estandar
+                -->
+                <span [ngSwitch] ="s">
+                    <i *ngSwitchCase = "'desayuno'" style="color: red;">{{s}}</i>
+                    <i *ngSwitchDefault> {{s}}</i>
+                </span>
+            </li>
+        </ul>
+        <a href="#" class="btn-card" (click)="ir()" >Ir</a>
+        <!--Cada elemento tiene un valor de display por defecto 
+        dependiendo de qué tipo de elemento sea como div suele ser block y
+        y el elemento span suele ser inline por defecto
+        En este span si true no pasa nada y si false entonces none, en dado caso escribe preferido
+        -->
+        <!--[style.display]="lugar.getSelected()? '':'none'"-->
+        <span *ngIf="lugar.getSelected()">Fav♥</span>
+
+        <!--No bindable es no compilable
+        Deben ser ignorados por AngularJS. Este podría ser el caso si tiene un sitio 
+        que muestra fragmentos de código, por ejemplo.
+        
+        <span ngNonBindable>{{Preferido}}</span>
+        -->
     </div>
 
 </div>
