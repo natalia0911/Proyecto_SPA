@@ -29,7 +29,7 @@
         -->
         <!--[style.display]="lugar.getSelected()? '':'none'"-->
         <span *ngIf="lugar.getSelected()">Fav♥</span>
-
+        <a [routerLink] = "['/destino']">Ver detalle</a>
         <!--No bindable es no compilable
         Deben ser ignorados por AngularJS. Este podría ser el caso si tiene un sitio 
         que muestra fragmentos de código, por ejemplo.

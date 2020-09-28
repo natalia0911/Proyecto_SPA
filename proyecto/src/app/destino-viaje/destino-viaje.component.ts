@@ -8,7 +8,7 @@ import { DestinoViaje } from '../models/destino-viaje.model';
 })
 export class DestinoViajeComponent implements OnInit {
 
-  //Variables
+  //Variables parametros al crear un componente de estos
   
   @Input() lugar:DestinoViaje; //lugar es una variable de este objeto 
   @Input() posicion:number;
