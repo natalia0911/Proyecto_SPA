@@ -28,7 +28,7 @@
         En este span si true no pasa nada y si false entonces none, en dado caso escribe preferido
         -->
         <!--[style.display]="lugar.getSelected()? '':'none'"-->
-        <span *ngIf="lugar.getSelected()">Fav♥</span>
+        <span *ngIf="lugar.getSelected()">♥</span>
         <a [routerLink] = "['/destino']">Ver detalle</a>
         <!--No bindable es no compilable
         Deben ser ignorados por AngularJS. Este podría ser el caso si tiene un sitio 

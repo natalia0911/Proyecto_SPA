@@ -11,7 +11,9 @@
                 </div>
 
                 <div class="card-body">
-                    <form>
+                     
+                    <!--
+                    <form> -->
                         <!--
                             The HTML DOM is an Object Model for HTML. It defines:
 
@@ -24,7 +26,7 @@
                         de no poner .value tengo todo eñ objecto html y pues podría acceder al id, placeholder,
                         type, class...etc
                         -->
-
+                        <!-- 
                         <div class="form-group">
                             <label	for="nombre">Nombre</label>
                             <input	type="text"	class="form-control" id="nombre" placeholder="Ingresar nombre..." #nombreLugar>
@@ -33,10 +35,14 @@
                             <label	for="Imagen	Url">Imagen	Url</label>
                             <input	type="text"	class="form-control"	id="imagenUrl"	placeholder="Ingresar	url..." #url>
                         </div>
+                        -->
                         <!-- Aquí a este boton le digo que realiza la accion de guaradr que recibe esos paraemtro del string del input-->
+                        <!--  
                         <button	type="submit"	class="btn	btn-primary" (click)="guardar(nombreLugar.value, url.value)" >Guardar!</button>
                     </form>
-                    
+                    -->
+
+                    <app-form-destino-viaje (onItemAdded)="agregado($event)"></app-form-destino-viaje>
                 </div>
             </div>
         </div>
